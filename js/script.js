@@ -27,10 +27,10 @@ while (pcNumbers.length < 16) {
 var userNumbers = [];
 var i = 0
 while (userNumbers.length < 84 && check(userNumber, pcNumbers) != true) {
-  var userNumber = parseInt(prompt("Inserisci un numero da 1 a 100"));
-  if (check(userNumber, pcNumbers)) {
-  alert("Hai perso, il tuo punteggio è: " + (userNumbers.length));
-} else if (userNumbers.includes(userNumber) == false && userNumber >= 1 && userNumber <= 100) {
+   var userNumber = parseInt(prompt("Inserisci un numero da 1 a 100"));
+   if (check(userNumber, pcNumbers)) {
+   alert("Hai perso, il tuo punteggio è: " + (userNumbers.length));
+ } else if (userNumbers.includes(userNumber) == false && userNumber >= 1 && userNumber <= 100) {
    userNumbers.push(userNumber);
  } else if (userNumbers.includes(userNumber) == true){
    alert('Hai già inserito questo numero');
