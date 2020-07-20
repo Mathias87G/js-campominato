@@ -23,8 +23,6 @@ while (pcNumbers.length < 16) {
   }
 }
 
-
-
 //Chiedere all'utente di inserire un numero alla volta compreso tra 1 e 100
 var userNumbers = [];
 var i = 0
@@ -32,12 +30,14 @@ while (userNumbers.length < 84 && check(userNumber, pcNumbers) != true) {
   var userNumber = parseInt(prompt("Inserisci un numero da 1 a 100"));
   if (check(userNumber, pcNumbers)) {
   alert("Hai perso, il tuo punteggio è: " + (userNumbers.length));
-} else if (userNumbers.includes(userNumber) == false){
+} else if (userNumbers.includes(userNumber) == false && userNumber >= 1 && userNumber <= 100) {
    userNumbers.push(userNumber);
  } else if (userNumbers.includes(userNumber) == true){
    alert('Hai già inserito questo numero');
  } else if (pcNumbers.length == 100){
    alert('Congratulazioni');
+ } else if (userNumber <1 || userNumber >100) {
+   alert('Attenzione: il numero inserito deve essere compreso tra 1 e 100');
  }
   i++;
 }
@@ -59,6 +59,5 @@ function check(num, array) {
       control = true;
     }
   }
-
   return control
 }
